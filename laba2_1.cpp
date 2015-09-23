@@ -21,10 +21,23 @@ double sinus(double x, double epsilon)
 	return sinus;
 }
 
-int main()
+void assert (double angle, double tochnost)
 {
-
-	return 0;
+	if (abs(sin(angle) - sinus(angle, tochnost)) <= tochnost)
+		cout << "good" << endl;
+	else
+		cout << "bad" << endl;
 }
 
+
+int main()
+{
+	const double Pi = 3.14159265358979323846;
+	assert (Pi/12, 0.00001);
+	assert (Pi/6, 0.0000001);
+	assert (Pi/4, 0.0000001);
+	assert (Pi/3, 0.00001);
+	assert (Pi/2, 0.0000001);
+	return 0;
+}
 
